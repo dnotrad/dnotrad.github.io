@@ -222,11 +222,14 @@ body{
     background-color: #3983AA;
     width: 100vw;
     height: 100vh;
+
     transform: translateY(-100%);
+    opacity: 0;
     transition: .4s ease-in-out;
 }
 .nav-for-mobile__wrapper.active{
     transform: translateY(0);
+    opacity: 1;
 }
 .nav-for-mobile__wrapper.active .header{
     box-shadow: none;
