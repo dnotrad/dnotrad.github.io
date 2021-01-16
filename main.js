@@ -1,16 +1,25 @@
-let burger = document.querySelector(".burger");
+let header = document.querySelector(".header");
+let burger = header.querySelector(".burger");
 let mobileNav = document.querySelector(".nav-for-mobile__wrapper");
 
-let contacts = document.querySelector(".contacts");
+// HEADER OPACITY
+let currentScroll = window.pageYOffset;
+document.addEventListener("scroll", () => {
+    if( (window.pageYOffset > 100) && (window.pageYOffset > currentScroll) ) {
+        header.classList.add("hide");
+        currentScroll = window.pageYOffset;
+    }else {
+        header.classList.remove("hide");
+        currentScroll = window.pageYOffset;
+    }
+})
 
-let scrollTo = () => {
-    // e.preventDefault();
-    // element.scrollIntoView();
-    alert(5);
-}
-
+// BURGER
 burger.addEventListener("click", () => {
     burger.classList.toggle("active");
     mobileNav.classList.toggle("active");
     document.body.classList.toggle("fixed");
+    header.classList.toggle("shadowOff");
+    
 })
+
