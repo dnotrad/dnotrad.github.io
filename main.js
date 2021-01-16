@@ -44,7 +44,7 @@ links.forEach( (link) => {
         e.preventDefault();
         let href = e.target.getAttribute("href");
         let elem = document.querySelector(href);
-        window.scroll({ top: elem.offsetTop, behavior: 'smooth' });
+        setTimeout( () => window.scroll({ top: elem.offsetTop, behavior: 'smooth' }), 1 );
         removeClassesForBurger();
         header.classList.add("hide");
     })
