@@ -15,11 +15,37 @@ document.addEventListener("scroll", () => {
 })
 
 // BURGER
-burger.addEventListener("click", () => {
-    burger.classList.toggle("active");
-    mobileNav.classList.toggle("active");
-    document.body.classList.toggle("fixed");
-    header.classList.toggle("shadowOff");
-    
-})
+let isBurgerOpen = false;
+let addClassesForBurger = () => {
+    burger.classList.add("active");
+    mobileNav.classList.add("active");
+    document.body.classList.add("fixed");
+    header.classList.add("shadowOff");
+    isBurgerOpen = true;
+}
+let removeClassesForBurger = () => {
+    burger.classList.remove("active");
+    mobileNav.classList.remove("active");
+    document.body.classList.remove("fixed");
+    header.classList.remove("shadowOff");
+    isBurgerOpen = false;
+}
+let toogleClassesForBurger = () => {
+    if(!isBurgerOpen) addClassesForBurger();
+    else removeClassesForBurger();
+}
+burger.addEventListener("click", toogleClassesForBurger);
+
+// SCROLL
+let links = document.querySelectorAll(".nav__link");
+links.forEach( (link) => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        let href = e.target.getAttribute("href");
+        let elem = document.querySelector(href);
+        window.scrollTo({ top: elem.offsetTop, behavior: 'smooth' });
+        removeClassesForBurger();
+    })
+} )
+
 
