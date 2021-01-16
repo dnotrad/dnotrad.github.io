@@ -38,14 +38,14 @@ burger.addEventListener("click", toogleClassesForBurger);
 
 // SCROLL
 let links = document.querySelectorAll(".nav__link");
+
 links.forEach( (link) => {
     link.addEventListener("click", (e) => {
         e.preventDefault();
         let href = e.target.getAttribute("href");
         let elem = document.querySelector(href);
-        window.scrollTo({ top: elem.offsetTop, behavior: 'smooth' });
+        window.scroll({ top: elem.offsetTop, behavior: 'smooth' });
         removeClassesForBurger();
+        header.classList.add("hide");
     })
 } )
-
-
