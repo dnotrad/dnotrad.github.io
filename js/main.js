@@ -41,11 +41,6 @@ let links = document.querySelectorAll(".nav__link");
 
 links.forEach( (link) => {
     link.addEventListener("click", (e) => {
-        e.preventDefault();
-        let href = e.target.getAttribute("href");
-        let elem = document.querySelector(href);
-        setTimeout( () => window.scroll({ top: elem.offsetTop, behavior: 'smooth' }), 1 );
         removeClassesForBurger();
-        header.classList.add("hide");
     })
 } )
