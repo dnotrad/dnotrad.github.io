@@ -333,10 +333,11 @@ body.fixed{
     opacity: 1;
 }
 .first-block__button{
+    margin-right: 5px;
     align-self: flex-start;
     opacity: 0;
     transform: translateX(-100%);
-    transition: .5s ease-in-out 1.3s;
+    transition: background-color .5s ease-in-out, transform .5s ease-in-out 1.3s, opacity .5s ease-in-out 1.3s;
 }
 .first-block__button.active{
     opacity: 1;
@@ -357,6 +358,10 @@ body.fixed{
 .main-photo img{
     max-width: 100%;
 }
+.buttons{
+    display: flex;
+}
+
 @media (max-width: 1230px) {
     .left__title{
         font-size: 6rem;
